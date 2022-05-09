@@ -40,9 +40,17 @@
             id="hamburger"
             src="./assets/icon-hamburger.svg"
             alt="icon-hamburger"
+            onclick="showMenu()"
           />
+
+          <img
+          id="close-menu"
+          src="./assets/icon-close-menu.svg"
+          alt="icon-close-menu"
+          onclick="hideMenu()"
+        />
         </div>
-        <menu>
+        <menu id="menu">
           <ul>
             <li>About</li>
             <li>Discover</li>
@@ -148,31 +156,21 @@
     </div>
 
     <script type="module" src="src/index.ts"></script>
-    <!-- <script>
+    <script>
       var hamburger_button = document.getElementById("hamburger");
-      var close_button = document.getElementById("close");
+      var close_button = document.getElementById("close-menu");
       var menu = document.getElementById("menu");
-      var headline = document.getElementById("headline");
-      var header = document.getElementById("header");
 
       window.showMenu = function showMenu() {
         menu.style.visibility = "visible";
-        menu.style.position = "none";
         hamburger_button.style.visibility = "hidden";
-        headline.style.visibility = "hidden";
         close_button.style.visibility = "visible";
-
-        header.style.backgroundImage = "none";
-        header.style.backgroundColor = "black";
       };
 
       window.hideMenu = function hideMenu() {
         menu.style.visibility = "hidden";
-        menu.style.position = "absolute";
-        headline.style.visibility = "visible";
         hamburger_button.style.visibility = "visible";
         close_button.style.visibility = "hidden";
-        header.style.backgroundImage = "";
       };
 
       window.addEventListener("resize", reportWindowSize);
@@ -190,6 +188,6 @@
           this.hideMenu();
         }
       }
-    </script> -->
+    </script>
   </body>
 </html>
