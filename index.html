@@ -15,7 +15,7 @@
     />
 
     <!-- Title -->
-    <title>LoopStudios_Landing_Page</title>
+    <title>Crowdfunding Product page</title>
     <!-- Description -->
     <meta name="description" content="Home description." />
 
@@ -27,243 +27,128 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Alata:400"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Josefin+Sans:300"
+      href="https://fonts.googleapis.com/css?family=Commissioner:400,500,700"
     />
   </head>
 
   <body>
     <div id="global_container">
-      <header id="header">
-        <div id="topbar_desktop">
-          <div id="topbar">
-            <img class="logo" src="./assets/logo.svg" alt="logo" />
-            <img
-              class="menu_icon"
-              id="hamburger"
-              src="./assets/icon-hamburger.svg"
-              alt="icon_hamburger"
-              onclick="showMenu()"
-            />
-            <img
-              class="menu_icon"
-              id="close"
-              src="./assets/icon-close.svg"
-              alt="close"
-              onclick="hideMenu()"
-            />
-          </div>
-          <nav id="menu">
-            <ul>
-              <li>About</li>
-              <li>Careers</li>
-              <li>Products</li>
-              <li>Support</li>
-            </ul>
-          </nav>
+      <header>
+        <div id="mobile_topbar">
+          <img id="logo" src="./assets/logo.svg" alt="logo" />
+          <img
+            id="hamburger"
+            src="./assets/icon-hamburger.svg"
+            alt="icon-hamburger"
+          />
         </div>
-        <div id="headline">
-          <h1>Immersive experiences that deliver</h1>
-        </div>
+        <menu>
+          <ul>
+            <li>About</li>
+            <li>Discover</li>
+            <li>Get Started</li>
+          </ul>
+        </menu>
       </header>
 
-      <section id="about">
-        <article>
-          <img
-            class="image_mobile"
-            src="./assets/mobile/image-interactive.jpg"
-            alt="interactive"
-          />
-          <img
-            class="image_desktop"
-            src="./assets/desktop/image-interactive.jpg"
-            alt="interactive"
-          />
-          <div id="text">
-            <h2>The leader in interactive VR</h2>
-            <p>
-              Founded in 2011, LoopStudios has been producing world-class
-              virtual reality projects for some of the best companies around the
-              globe. Our award-winning creations have transformed businesses
-              through digital experiences that bind to their brand.
-            </p>
-          </div>
-        </article>
-      </section>
-
-      <section id="creations">
-        <h2>Our creations</h2>
-        <ul>
-          <li>
-            <h3>
-              deep <br />
-              earth
-            </h3>
-            <img
-              class="mobile"
-              src="./assets/mobile/image-deep-earth.jpg"
-              alt="image-deep-earth"
-            />
-            <img
-              class="desktop"
-              src="./assets/desktop/image-deep-earth.jpg"
-              alt="image-deep-earth"
-            />
-          </li>
-          <li>
-            <h3>
-              night <br />
-              arcade
-            </h3>
-            <img
-              class="mobile"
-              src="./assets/mobile/image-night-arcade.jpg"
-              alt="image-night-arcade"
-            />
-            <img
-              class="desktop"
-              src="./assets/desktop/image-night-arcade.jpg"
-              alt="image-night-arcade"
-            />
-          </li>
-          <li>
-            <h3>
-              soccer <br />
-              team vr
-            </h3>
-            <img
-              class="mobile"
-              src="./assets/mobile/image-soccer-team.jpg"
-              alt="image-soccer-team"
-            />
-            <img
-              class="desktop"
-              src="./assets/desktop/image-soccer-team.jpg"
-              alt="image-soccer-team"
-            />
-          </li>
-          <li>
-            <h3>
-              the <br />
-              grid
-            </h3>
-            <img
-              class="mobile"
-              src="./assets/mobile/image-grid.jpg"
-              alt="image-grid"
-            />
-            <img
-              class="desktop"
-              src="./assets/desktop/image-grid.jpg"
-              alt="image-grid"
-            />
-          </li>
-          <li>
-            <h3>
-              from up <br />
-              above vr
-            </h3>
-            <img
-              class="mobile"
-              src="./assets/mobile/image-from-above.jpg"
-              alt="image-from-above"
-            />
-            <img
-              class="desktop"
-              src="./assets/desktop/image-from-above.jpg"
-              alt="image-from-above"
-            />
-          </li>
-          <li>
-            <h3>
-              pocket <br />
-              borealis
-            </h3>
-            <img
-              class="mobile"
-              src="./assets/mobile/image-pocket-borealis.jpg"
-              alt="image-pocket-borealis"
-            />
-            <img
-              class="desktop"
-              src="./assets/desktop/image-pocket-borealis.jpg"
-              alt="image-pocket-borealis"
-            />
-          </li>
-          <li>
-            <h3>
-              the <br />
-              curiosity
-            </h3>
-            <img
-              class="mobile"
-              src="./assets/mobile/image-curiosity.jpg"
-              alt="curiosity"
-            />
-            <img
-              class="desktop"
-              src="./assets/desktop/image-curiosity.jpg"
-              alt="curiosity"
-            />
-          </li>
-          <li>
-            <h3>
-              make it <br />
-              fisheye
-            </h3>
-            <img
-              class="mobile"
-              src="./assets/mobile/image-fisheye.jpg"
-              alt="image-fisheye"
-            />
-            <img
-              class="desktop"
-              src="./assets/desktop/image-fisheye.jpg"
-              alt="image-fisheye"
-            />
-          </li>
-        </ul>
-        <div id="see_all">See all</div>
-      </section>
-
-      <footer>
-        <div id="desktop_container">
-          <img class="logo" src="./assets/logo.svg" alt="logo" />
-          <ul id="navigation">
-            <li>About</li>
-            <li>Careers</li>
-            <li>Events</li>
-            <li>Products</li>
-            <li>Support</li>
-          </ul>
-
-          <div id="social">
-            <ul>
-              <li>
-                <img src="./assets/icon-facebook.svg" alt="icon-facebook" />
-              </li>
-              <li>
-                <img src="./assets/icon-twitter.svg" alt="icon-twitter" />
-              </li>
-              <li>
-                <img src="./assets/icon-pinterest.svg" alt="icon-pinterest" />
-              </li>
-              <li>
-                <img src="./assets/icon-instagram.svg" alt="icon-instagram" />
-              </li>
-            </ul>
-          </div>
-
-          <p id="copyright">© 2021 Loopstudios. All rights reserved.</p>
+      <section id="headline">
+        <img
+          id="mastercraft_logo"
+          src="./assets/logo-mastercraft.svg"
+          alt="logo-mastercraft"
+        />
+        <h1>
+          Mastercraft Bamboo <br />
+          Monitor Riser
+        </h1>
+        <p>
+          A beautifully handcrafted monitor stand to reduce neck and eye strain.
+        </p>
+        <div id="buttons">
+          <button class="button">Back this project</button>
+          <button class="button bookmark">
+            <img src="./assets/icon-bookmark.svg" alt="icon-bookmark" />
+          </button>
         </div>
-      </footer>
+      </section>
+
+      <section id="numbers">
+        <div class="number_emphase">$89,914</div>
+        <p>of $100,000 backed</p>
+
+        <hr />
+        <div class="number_emphase">5,007</div>
+        <p>total backers</p>
+        <hr />
+        <div class="number_emphase">56</div>
+        <p>days left</p>
+
+        <div id="progress_container">
+
+        <progress id="days_left" max="100" value="70">70%</progress></div>
+      </section>
+
+      <section id="about">
+        <article id="description">
+          <h2>About this project</h2>
+          <p>
+            The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+            platform that elevates your screen to a more comfortable viewing
+            height. Placing your monitor at eye level has the potential to
+            improve your posture and make you more comfortable while at work,
+            helping you stay focused on the task at hand.
+            <br />
+            <br />
+            Featuring artisan craftsmanship, the simplicity of design creates
+            extra desk space below your computer to allow notepads, pens, and
+            USB sticks to be stored under the stand.
+          </p>
+        </article>
+
+        <div id="funding_options">
+          <ul>
+            <li>
+              <h3>Bamboo Stand</h3>
+              <span id="cost">Pledge $25 or more</span>
+              <p>
+                You get and ergonomic stand made of natural bamboo. You've
+                helped us launch our promotional campaign, and you'll be added
+                to a special Backer member list.
+              </p>
+              <div id="quantity"><span>101</span>left</div>
+              <button class="button">Select reward</button>
+            </li>
+
+            <li>
+              <h3>Black Edition Stand</h3>
+              <span id="cost">Pledge $75 or more</span>
+              <p>
+                You get a Black Special Edition computer stand and a personal
+                thank you. You'll be added to our Backer member list. Shipping
+                is included.
+              </p>
+              <div id="quantity"><span>64</span>left</div>
+              <button class="button">Select reward</button>
+            </li>
+
+            <li class="disabled">
+              <h3>Mahogany Special Edition</h3>
+              <span id="cost">Pledge $200 or more</span>
+              <p>
+                You get two Special Edition Mahogany stands, a Backer T-Shirt,
+                and a personal thank you. You'll be added to our Backer member
+                list. Shipping is included.
+              </p>
+              <div id="quantity"><span>0</span>left</div>
+              <button class="button disabled">Out of stock</button>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
 
     <script type="module" src="src/index.ts"></script>
-    <script>
+    <!-- <script>
       var hamburger_button = document.getElementById("hamburger");
       var close_button = document.getElementById("close");
       var menu = document.getElementById("menu");
@@ -305,6 +190,6 @@
           this.hideMenu();
         }
       }
-    </script>
+    </script> -->
   </body>
 </html>
