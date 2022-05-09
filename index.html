@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="src/styles.scss" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- Robots -->
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Device -->
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=5"
+    />
+
+    <!-- Title -->
+    <title>LoopStudios_Landing_Page</title>
+    <!-- Description -->
+    <meta name="description" content="Home description." />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/favicon-32x32.png" type="image/x-icon" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Alata:400"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Josefin+Sans:300"
+    />
+  </head>
+
+  <body>
+    <div id="global_container">
+      <header id="header">
+        <div id="topbar_desktop">
+          <div id="topbar">
+            <img class="logo" src="./assets/logo.svg" alt="logo" />
+            <img
+              class="menu_icon"
+              id="hamburger"
+              src="./assets/icon-hamburger.svg"
+              alt="icon_hamburger"
+              onclick="showMenu()"
+            />
+            <img
+              class="menu_icon"
+              id="close"
+              src="./assets/icon-close.svg"
+              alt="close"
+              onclick="hideMenu()"
+            />
+          </div>
+          <nav id="menu">
+            <ul>
+              <li>About</li>
+              <li>Careers</li>
+              <li>Products</li>
+              <li>Support</li>
+            </ul>
+          </nav>
+        </div>
+        <div id="headline">
+          <h1>Immersive experiences that deliver</h1>
+        </div>
+      </header>
+
+      <section id="about">
+        <article>
+          <img
+            class="image_mobile"
+            src="./assets/mobile/image-interactive.jpg"
+            alt="interactive"
+          />
+          <img
+            class="image_desktop"
+            src="./assets/desktop/image-interactive.jpg"
+            alt="interactive"
+          />
+          <div id="text">
+            <h2>The leader in interactive VR</h2>
+            <p>
+              Founded in 2011, LoopStudios has been producing world-class
+              virtual reality projects for some of the best companies around the
+              globe. Our award-winning creations have transformed businesses
+              through digital experiences that bind to their brand.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section id="creations">
+        <h2>Our creations</h2>
+        <ul>
+          <li>
+            <h3>
+              deep <br />
+              earth
+            </h3>
+            <img
+              class="mobile"
+              src="./assets/mobile/image-deep-earth.jpg"
+              alt="image-deep-earth"
+            />
+            <img
+              class="desktop"
+              src="./assets/desktop/image-deep-earth.jpg"
+              alt="image-deep-earth"
+            />
+          </li>
+          <li>
+            <h3>
+              night <br />
+              arcade
+            </h3>
+            <img
+              class="mobile"
+              src="./assets/mobile/image-night-arcade.jpg"
+              alt="image-night-arcade"
+            />
+            <img
+              class="desktop"
+              src="./assets/desktop/image-night-arcade.jpg"
+              alt="image-night-arcade"
+            />
+          </li>
+          <li>
+            <h3>
+              soccer <br />
+              team vr
+            </h3>
+            <img
+              class="mobile"
+              src="./assets/mobile/image-soccer-team.jpg"
+              alt="image-soccer-team"
+            />
+            <img
+              class="desktop"
+              src="./assets/desktop/image-soccer-team.jpg"
+              alt="image-soccer-team"
+            />
+          </li>
+          <li>
+            <h3>
+              the <br />
+              grid
+            </h3>
+            <img
+              class="mobile"
+              src="./assets/mobile/image-grid.jpg"
+              alt="image-grid"
+            />
+            <img
+              class="desktop"
+              src="./assets/desktop/image-grid.jpg"
+              alt="image-grid"
+            />
+          </li>
+          <li>
+            <h3>
+              from up <br />
+              above vr
+            </h3>
+            <img
+              class="mobile"
+              src="./assets/mobile/image-from-above.jpg"
+              alt="image-from-above"
+            />
+            <img
+              class="desktop"
+              src="./assets/desktop/image-from-above.jpg"
+              alt="image-from-above"
+            />
+          </li>
+          <li>
+            <h3>
+              pocket <br />
+              borealis
+            </h3>
+            <img
+              class="mobile"
+              src="./assets/mobile/image-pocket-borealis.jpg"
+              alt="image-pocket-borealis"
+            />
+            <img
+              class="desktop"
+              src="./assets/desktop/image-pocket-borealis.jpg"
+              alt="image-pocket-borealis"
+            />
+          </li>
+          <li>
+            <h3>
+              the <br />
+              curiosity
+            </h3>
+            <img
+              class="mobile"
+              src="./assets/mobile/image-curiosity.jpg"
+              alt="curiosity"
+            />
+            <img
+              class="desktop"
+              src="./assets/desktop/image-curiosity.jpg"
+              alt="curiosity"
+            />
+          </li>
+          <li>
+            <h3>
+              make it <br />
+              fisheye
+            </h3>
+            <img
+              class="mobile"
+              src="./assets/mobile/image-fisheye.jpg"
+              alt="image-fisheye"
+            />
+            <img
+              class="desktop"
+              src="./assets/desktop/image-fisheye.jpg"
+              alt="image-fisheye"
+            />
+          </li>
+        </ul>
+        <div id="see_all">See all</div>
+      </section>
+
+      <footer>
+        <div id="desktop_container">
+          <img class="logo" src="./assets/logo.svg" alt="logo" />
+          <ul id="navigation">
+            <li>About</li>
+            <li>Careers</li>
+            <li>Events</li>
+            <li>Products</li>
+            <li>Support</li>
+          </ul>
+
+          <div id="social">
+            <ul>
+              <li>
+                <img src="./assets/icon-facebook.svg" alt="icon-facebook" />
+              </li>
+              <li>
+                <img src="./assets/icon-twitter.svg" alt="icon-twitter" />
+              </li>
+              <li>
+                <img src="./assets/icon-pinterest.svg" alt="icon-pinterest" />
+              </li>
+              <li>
+                <img src="./assets/icon-instagram.svg" alt="icon-instagram" />
+              </li>
+            </ul>
+          </div>
+
+          <p id="copyright">© 2021 Loopstudios. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="src/index.ts"></script>
+    <script>
+      var hamburger_button = document.getElementById("hamburger");
+      var close_button = document.getElementById("close");
+      var menu = document.getElementById("menu");
+      var headline = document.getElementById("headline");
+      var header = document.getElementById("header");
+
+      window.showMenu = function showMenu() {
+        menu.style.visibility = "visible";
+        menu.style.position = "none";
+        hamburger_button.style.visibility = "hidden";
+        headline.style.visibility = "hidden";
+        close_button.style.visibility = "visible";
+
+        header.style.backgroundImage = "none";
+        header.style.backgroundColor = "black";
+      };
+
+      window.hideMenu = function hideMenu() {
+        menu.style.visibility = "hidden";
+        menu.style.position = "absolute";
+        headline.style.visibility = "visible";
+        hamburger_button.style.visibility = "visible";
+        close_button.style.visibility = "hidden";
+        header.style.backgroundImage = "";
+      };
+
+      window.addEventListener("resize", reportWindowSize);
+
+      function reportWindowSize() {
+        if (window.innerWidth >= 1440) {
+          //if the window is resized to desktop mode, reset the menu for desktop view
+
+          menu.style.height = "80px";
+          menu.style.visibility = "visible";
+          hamburger_button.style.visibility = "hidden";
+          close_button.style.visibility = "hidden";
+        } else {
+          //If the window is sized down to mobile view, close the menu
+          this.hideMenu();
+        }
+      }
+    </script>
+  </body>
+</html>
