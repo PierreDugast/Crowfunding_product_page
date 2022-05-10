@@ -1,6 +1,6 @@
-9/05/2022 : 13h50 -
+9/05/2022 : 13h50 - 16h10 :  2h20
 
-- View the optimal layout depending on their device's screen size
+- View the optimal layout depending on their device's screen size 
 - See hover states for interactive elements
 - 
 - Make a selection of which pledge to make
