@@ -9,7 +9,6 @@
   background-color: #fafafa;
   position: relative;
 
-
   header {
     height: 300px;
     background-image: url(../assets/image-hero-mobile.jpg);
@@ -57,47 +56,41 @@
     menu {
       visibility: hidden;
       position: absolute;
-      
+
       width: 330px;
       height: 210px;
       background-color: rgb(255, 255, 255);
       top: 75px;
       right: 22px;
 
-      border-radius: 10px ;
-      box-shadow: rgba(0, 0, 0, 0.432) 0px 100px 375px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.432) 0px 100px 375px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 
       z-index: 1;
       padding: 0;
 
-      ul{
-     
-        border-radius: 10px ;
+      ul {
+        border-radius: 10px;
 
         li {
-
-          margin:0;
+          margin: 0;
           padding: 0;
- 
+
           text-align: left;
           font-weight: 500;
           font-size: 18px;
           line-height: 70px;
           padding-left: 23px;
           border-bottom: 1px solid #f2f2f2;
-          
-  
+
           height: 70px;
-          
+
           &:last-child {
-            border:none;
+            border: none;
           }
         }
-
-
       }
-
-
     }
   }
 
@@ -229,7 +222,6 @@
     border: 1px solid #f2f2f2;
     border-radius: 10px;
 
-    
     #description {
       width: 274px;
       margin: 0 auto;
@@ -246,13 +238,10 @@
         color: $dark_gray;
         line-height: 1.5;
         margin-bottom: 36px;
-        
       }
-
     }
 
     #funding_options {
-
       li {
         width: 280px;
         margin: 0 auto;
@@ -261,20 +250,19 @@
         border-radius: 10px;
         margin-bottom: 25px;
 
-        h3{
+        h3 {
           font-size: 15px;
           font-weight: 700;
-          margin-bottom : 15px;
+          margin-bottom: 15px;
         }
         #cost {
-          color :$moderate_cyan;
+          color: $moderate_cyan;
           font-weight: 500;
-     
         }
 
-        p{
+        p {
           margin-top: 30px;
-          color : $dark_gray;
+          color: $dark_gray;
           font-size: 14px;
           font-weight: 400;
           line-height: 1.5;
@@ -286,7 +274,6 @@
           display: flex;
 
           span {
-
             font-size: 30px;
             color: black;
             margin-right: 5px;
@@ -302,18 +289,18 @@
         }
       }
     }
-
   }
 
   #modal_pledge {
-    visibility: hidden;
+    visibility: visible;
     position: absolute;
     width: 330px;
     height: fit-content;
     right: 22px;
-    top:170px;
+    top: 170px;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.432) 0px 100px 375px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.432) 0px 100px 375px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     border-radius: 10px;
     padding: 30px;
 
@@ -338,16 +325,15 @@
       line-height: 1.5;
       font-size: 14px;
       font-weight: 400;
-      color : $dark_gray;
+      color: $dark_gray;
       margin-bottom: 10px;
     }
 
     ul {
-
       li {
         width: 280px;
         height: fit-content;
-        margin : 20px auto;
+        margin: 20px auto;
         border: 1px solid #cacaca;
         padding: 20px;
         border-radius: 8px;
@@ -359,8 +345,6 @@
           line-height: 24px;
 
           position: relative;
-          
-          
 
           input[type="checkbox"] {
             -webkit-appearance: none;
@@ -380,7 +364,7 @@
               cursor: pointer;
             }
 
-            &:before{
+            &:before {
               content: "";
               width: 12px;
               height: 12px;
@@ -397,22 +381,18 @@
           }
 
           div {
-
             position: absolute;
-            left:36px;
-            top : -12px;
-       
-            
-            
+            left: 36px;
+            top: -12px;
+
             span {
-              color : $moderate_cyan;
+              color: $moderate_cyan;
               font-weight: 500;
             }
           }
-
         }
 
-        p{
+        p {
           margin-bottom: 15px;
           color: $dark_gray;
           font-weight: 400;
@@ -430,32 +410,94 @@
           color: $dark_gray;
         }
 
+        #pledge_amount {
+          visibility: hidden;
+          position: absolute;
+        }
+
+        &.selected {
+          border: 2px solid $moderate_cyan;
+
+          #pledge_amount {
+            position: relative;
+
+            hr {
+              width: 276px;
+              margin-top: 28px;
+              margin-left: -20px;
+              border: none;
+              border-top: 1px solid #cacaca;
+            }
+
+            #pledge_label {
+              margin: 0;
+              margin-top: 34px;
+              text-align: center;
+              margin-bottom: 24px;
+            }
+
+            #input {
+              display: flex;
+              position: relative;
+
+              input[type="number"] {
+                width: 100px;
+                height: 50px;
+                border: 1px solid #cacaca;
+                border-radius: 25px;
+                appearance: none;
+                -webkit-appearance: none;
+                padding-left: 35px;
+              }
+
+              //hide arrows
+              input::-webkit-outer-spin-button,
+              input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+              }
+
+              .unit {
+                opacity: 0.4;
+                position: absolute;
+                top: 16px;
+                left: 20px;
+              }
+
+              .button {
+                position: absolute;
+                margin: 0;
+                width: 116px;
+                height: 50px;
+                right: 0;
+              }
+            }
+          }
+        }
+
         &.disabled {
           opacity: 0.6;
 
           #pledge_type {
-            
-            
-  
             input[type="checkbox"] {
-              pointer-events: none; 
+              pointer-events: none;
             }
           }
         }
       }
     }
-    
   }
 
   #modal_thankyou {
     visibility: hidden;
     width: 330px;
-    height : 385px;
+    height: 385px;
     position: absolute;
-    top : 170px;
+    top: 170px;
     left: 22px;
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.432) 0px 100px 375px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: rgba(0, 0, 0, 0.432) 0px 100px 375px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     border-radius: 10px;
     padding: 30px;
 
@@ -473,7 +515,7 @@
     }
 
     p {
-      color : $dark_gray;
+      color: $dark_gray;
       font-weight: 400;
       font-size: 13px;
       text-align: center;
@@ -487,7 +529,6 @@
       height: 50px;
     }
   }
-
 
   //classes
   .button {
@@ -514,7 +555,6 @@
       }
     }
   }
-
 
   @media (min-width: $breakpoint-computer) {
     width: 1440px;
