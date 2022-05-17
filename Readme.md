@@ -1,11 +1,19 @@
 9/05/2022 : 13h50 - 16h10 :  2h20
-10/05/2022 : 11h - 12h43, 13h08
+10/05/2022 : 11h - 12h43, 13h08 - 15h 14 : 3h50
+11/05/2022: 12h00- 13h14 , 16h - 17h
+    problème fermeture pledge
 
-- View the optimal layout depending on their device's screen size 
-- See hover states for interactive elements
+  17/05/2022 : 19h10 - 20h50 : fix js
+
+- View the optimal layout depending on their device's screen size :
+- See hover states for interactive elements : 
 - 
-- Make a selection of which pledge to make
-- See an updated progress bar and total money raised based on their pledge total after confirming a pledge
-- See the number of total backers increment by one after confirming a pledge
+- Make a selection of which pledge to make :
+  - select directly from option : ok
+  - select after modal pledge opened :  ok
+- See an updated progress bar and total money raised based on their pledge total after confirming a pledge : OK
+- See the number of total backers increment by one after confirming a pledge :  OK
 - 
-- Toggle whether or not the product is bookmarked
+- Toggle whether or not the product is bookmarked :OK
+
+

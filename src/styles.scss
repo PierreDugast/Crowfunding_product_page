@@ -292,7 +292,7 @@
   }
 
   #modal_pledge {
-    visibility: visible;
+    display: "none";
     position: absolute;
     width: 330px;
     height: fit-content;
@@ -318,6 +318,10 @@
         width: auto;
         position: absolute;
         right: 30px;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 
@@ -410,15 +414,16 @@
           color: $dark_gray;
         }
 
-        #pledge_amount {
-          visibility: hidden;
-          position: absolute;
+        .pledge_amount {
+          display: none;
+          // position: absolute;
         }
 
         &.selected {
           border: 2px solid $moderate_cyan;
 
-          #pledge_amount {
+          .pledge_amount {
+     
             position: relative;
 
             hr {

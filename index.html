@@ -73,26 +73,31 @@
           A beautifully handcrafted monitor stand to reduce neck and eye strain.
         </p>
         <div id="buttons">
-          <button class="button">Back this project</button>
-          <button class="button bookmark">
-            <img src="./assets/icon-bookmark.svg" alt="icon-bookmark" />
+          <button class="button" onclick="showPledgeModal()">Back this project</button>
+          <button id="button_bookmark" class="button bookmark" onclick="toggle_bookmark('check')">
+            <img src="./assets/icon-bookmark.svg" alt="icon-bookmark"  />
           </button>
+
+          <button id="button_check" class="button bookmark" onclick="toggle_bookmark('bookmark')">
+            <img src="./assets/icon-check.svg" alt="icon-check"  />
+          </button>
+
         </div>
       </section>
 
       <section id="numbers">
-        <div class="number_emphase">$89,914</div>
+        <div class="number_emphase" id="pledge_total_display">$89,914</div>
         <p>of $100,000 backed</p>
 
         <hr />
-        <div class="number_emphase">5,007</div>
+        <div class="number_emphase" id="backers_display">5,007</div>
         <p>total backers</p>
         <hr />
         <div class="number_emphase">56</div>
         <p>days left</p>
 
         <div id="progress_container">
-          <progress id="days_left" max="100" value="70">70%</progress>
+          <progress id="progress" max="100000" value="89914"></progress>
         </div>
       </section>
 
@@ -123,8 +128,8 @@
                 helped us launch our promotional campaign, and you'll be added
                 to a special Backer member list.
               </p>
-              <div id="quantity"><span>101</span>left</div>
-              <button class="button">Select reward</button>
+              <div id="quantity"><span class="bamboo_left">101</span>left</div>
+              <button class="button" onclick="showPledgeModal('bamboo')" >Select reward</button>
             </li>
 
             <li>
@@ -135,8 +140,8 @@
                 thank you. You'll be added to our Backer member list. Shipping
                 is included.
               </p>
-              <div id="quantity"><span>64</span>left</div>
-              <button class="button">Select reward</button>
+              <div id="quantity"><span class="black_left">64</span>left</div>
+              <button class="button" onclick="showPledgeModal('black')">Select reward</button>
             </li>
 
             <li class="disabled">
@@ -148,7 +153,7 @@
                 list. Shipping is included.
               </p>
               <div id="quantity"><span>0</span>left</div>
-              <button class="button disabled">Out of stock</button>
+              <button class="button disabled" onclick="showPledgeModal('mahogany')"">Out of stock</button>
             </li>
           </ul>
         </div>
@@ -159,7 +164,7 @@
       <div id="modal_pledge">
         <div id="modal_header">
           <h2>Back this project</h2>
-          <img src="./assets/icon-close-modal.svg" alt="icon-close-modal" />
+          <img src="./assets/icon-close-modal.svg" alt="icon-close-modal" onclick="hidePledgeModal()"/>
         </div>
         <p id="pledge_description">
           Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
@@ -167,9 +172,9 @@
         </p>
 
         <ul>
-          <li>
+          <li class="option" id="free" onclick="selectOption('free')">
             <div id="pledge_type">
-              <input type="checkbox" name="" id="" />
+              <input class="checkbox" type="checkbox" id="free_checkbox" name="" id="" />
               <h3>Pledge with no reward</h3>
             </div>
 
@@ -178,10 +183,20 @@
               project. As a backer, you'll be signed up to receive product
               updates via email.
             </p>
+            <div class="pledge_amount" id="free_pledge_amount">
+              <hr />
+              <div id="input">
+                <button class="button" onclick="pledge('free','0')">Continue</button>
+              </div>
+              <p><br></p>
+            </div>
           </li>
-          <li class="">
+
+
+        <!-- Bamboo -->
+          <li class="option" id="bamboo"  onclick="selectOption('bamboo')">
             <div id="pledge_type">
-              <input type="checkbox" name="" id="" />
+              <input class="checkbox"  id="bamboo_checkbox" type="checkbox" name="" id="" />
               <div>
                 <h3>Bamboo Stand</h3>
                 <span>Pledge $25 or more</span>
@@ -192,20 +207,22 @@
               us launch our promotional campaign, and you'll be added to a
               special Backer member list.
             </p>
-            <div id="left"><span>101</span>left</div>
-            <div id="pledge_amount">
+            <div id="left"><span class="bamboo_left">101</span>left</div>
+            <div class="pledge_amount" id="bamboo_pledge_amount">
               <hr />
               <p id="pledge_label">Enter your pledge</p>
               <div id="input">
-                <input type="number" name="" id="" value="25" />
+                <input type="number" name="" id="input_bamboo_pledge" value="25" />
                 <span class="unit">$</span>
-                <button class="button">Continue</button>
+                <button class="button" onclick="pledge('bamboo',document.getElementById('input_bamboo_pledge').value)">Continue</button>
               </div>
             </div>
           </li>
-          <li class="">
+
+          <!-- Black -->
+          <li class="option" id="black" onclick="selectOption('black')">
             <div id="pledge_type">
-              <input type="checkbox" name="" id="" />
+              <input  class="checkbox"  id="black_checkbox" type="checkbox" name="" id="" />
               <div>
                 <h3>Black Edition Stand</h3>
                 <span>Pledge $75 or more</span>
@@ -217,22 +234,23 @@
               included.
             </p>
             <div id="left">
-              <span>64</span>left
+              <span class="black_left">64</span>left
             </div>
-            <div id="pledge_amount">
+            <div class="pledge_amount" id="black_pledge_amount">
               <hr />
               <p id="pledge_label">Enter your pledge</p>
               <div id="input">
-                <input type="number" name="" id="" value="75" />
+                <input type="number" name="" id="input_black_pledge" value="75" />
                 <span class="unit">$</span>
-                <button class="button">Continue</button>
+                <button class="button" onclick="pledge('black',document.getElementById('input_black_pledge').value)">Continue</button>
               </div>
             </div>
           </li>
 
-          <li class="disabled">
+          <!-- Mahogany -->
+          <li  class="option disabled" id="mahogany" >
             <div id="pledge_type">
-              <input type="checkbox" name="" id="" />
+              <input  class="checkbox"  id="mahogany_checkbox" type="checkbox" name="" id="" disabled/>
               <div>
                 <h3>Mahogany Special Edition</h3>
                 <span>Pledge $200 or more</span>
@@ -245,7 +263,7 @@
             </p>
             <div id="left"><span>0</span>left</div>
          
-          <div id="pledge_amount">
+          <div class="pledge_amount" id="mahogany_pledge_amount">
             <hr />
             <p id="pledge_label">Enter your pledge</p>
             <div id="input">
@@ -267,15 +285,195 @@
           Monitor Riser worldwide. You will get an email once our campaign is
           completed.
         </p>
-        <button class="button">Got it!</button>
+        <button class="button" onclick="hideModalThankYou()">Got it!</button>
       </div>
     </div>
 
     <script type="module" src="src/index.ts"></script>
     <script>
+      //bookmark
+      var button_bookmark = document.getElementById("button_bookmark");
+      var button_check  = document.getElementById("button_check");
+      window.toggle_bookmark = function toggle_bookmark(value){
+        if (value === "bookmark"){
+          button_check.style.visibility = " hidden";
+          button_bookmark.style.visibility = "visible";
+        }
+        else if (value === "check"){
+          button_bookmark.style.visibility = "hidden";
+          button_check.style.visibility = "visible";
+        }
+      }
+
+      //default
+      toggle_bookmark("bookmark");
+
+
+      //GLOBAL VAR
+      var pledge_total = 89914;
+      var backers = 5007;
+      var bamboo_left = 101;
+      var black_left = 64;
+
+      function numberWithCommas(x) {
+         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+
+      window.updatePledgeTotal = function updatePledgeTotal(value) {
+        var pledge_total_display = document.getElementById("pledge_total_display");
+        pledge_total_display.innerHTML = numberWithCommas(value).toString();
+      }
+
+      window.updateBackers = function updateBackers(value) {
+        var backers_display = document.getElementById("backers_display");
+        backers_display.innerHTML = numberWithCommas(value).toString();
+      }
+
+      window.updateLefts = function updateLefts(option,value) {
+        var left_displays = document.getElementsByClassName(option);
+   
+        [].forEach.call(left_displays, function(el) {
+          el.innerHTML = value.toString();
+        });
+
+      }
+
+      window.updateProgressBar = function updateProgressBar(value) {
+        var progress = document.getElementById("progress");
+        progress.value = value;
+      }
+
+      window.addPledgeTotal = function addPledgeTotal(value){
+        
+        pledge_total = pledge_total+value;
+  
+        updatePledgeTotal(pledge_total);
+        updateProgressBar(pledge_total);
+      }
+
+      window.incrementBackers = function incrementBackers(){
+        backers = ++backers;
+        updateBackers(backers);
+      }
+
+      window.pledge = function pledge(option,pledge_amount){
+
+        pledge_amount_int = parseInt(pledge_amount);
+        
+        addPledgeTotal(pledge_amount_int);
+
+        incrementBackers();
+
+        
+        if(option === "bamboo"){
+          bamboo_left = --bamboo_left;
+          updateLefts("bamboo_left",bamboo_left);
+
+
+        }else if (option === "black"){
+          black_left = -- black_left;
+          updateLefts("black_left",black_left);
+    
+        }else if (option === "free"){
+
+        }
+
+        hidePledgeModal();
+        showModalThankYou();
+      }
+
+
+
+      // pledge_modal
+
+      
+      // MODAL GLOBAL
+
+      window.showPledgeModal = function showPledgeModal(value){
+
+        // ouvre le modal
+        document.getElementById("modal_pledge").style.display = "block";
+
+        if (value != undefined){
+          selectOption(value);
+        }
+          
+          
+      }
+
+      window.hidePledgeModal = function hidePledgeModal(){
+        document.getElementById("modal_pledge").style.display = "none";
+
+      }
+
+    
+
+      var bamboo_pledge_amount = document.getElementById("bamboo_pledge_amount");
+      
+      function check(option){
+        // uncheck toutes les checkbox
+        [].forEach.call(document.getElementsByClassName("checkbox"), function(element) {
+            element.checked = false;
+    
+        });
+        // check la bonne
+        document.getElementById(option+"_checkbox").checked = true;
+      }
+
+      function select(option){
+        // enleve toutes les classes selected des checkbox
+        [].forEach.call(document.getElementsByClassName("option"), function(element) {
+            element.classList.remove("selected");
+    
+        });
+
+        // ajoute la classe selected à l'option selectionnée
+        document.getElementById(option).classList.add("selected");
+      }
+      
+      function showPledgeAmount(option){
+        // cache tous les pledge amount
+        [].forEach.call(document.getElementsByClassName("pledge_amount"), function(element) {
+            element.style.display = "none";
+    
+        });
+
+        // affiche le pledge amount sélectionné
+        document.getElementById(option+"_pledge_amount").style.display="block";
+      }
+      
+      window.selectOption = function  selectOption(option){
+
+        // check option
+        check(option);
+          
+        // apply selected class
+        select(option);
+
+        //rend visible le pledge amount
+        showPledgeAmount(option);
+      }
+
+      
+      
+      
+  
+      // MODAL THANKYOU
+      function showModalThankYou() {
+        document.getElementById("modal_thankyou").style.visibility="visible";
+      }
+
+      window.hideModalThankYou = function hideModalThankYou() {
+        document.getElementById("modal_thankyou").style.visibility="hidden";
+      }
+
+
+
+      // menu
       var hamburger_button = document.getElementById("hamburger");
       var close_button = document.getElementById("close-menu");
       var menu = document.getElementById("menu");
+
 
       window.showMenu = function showMenu() {
         menu.style.visibility = "visible";
