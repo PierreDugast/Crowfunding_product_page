@@ -8,6 +8,7 @@
   width: 375px;
   background-color: #fafafa;
   position: relative;
+  padding-bottom: 40px;
 
   header {
     height: 300px;
@@ -466,6 +467,11 @@
         }
 
         @media (min-width: $breakpoint-computer) {
+
+          &:last-child{
+            margin-bottom: 0px;
+          }
+
             width: 100%;
             position: relative;
             padding: 42px;
