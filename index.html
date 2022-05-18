@@ -354,12 +354,12 @@
 
       window.updatePledgeTotal = function updatePledgeTotal(value) {
         var pledge_total_display = document.getElementById("pledge_total_display");
-        pledge_total_display.innerHTML = numberWithCommas(value).toString();
+        pledge_total_display.innerHTML = numberWithCommas(value).toString()+"<p>of $100,000 backed</p>";
       }
 
       window.updateBackers = function updateBackers(value) {
         var backers_display = document.getElementById("backers_display");
-        backers_display.innerHTML = numberWithCommas(value).toString();
+        backers_display.innerHTML = numberWithCommas(value).toString()+"<p>total backers</p>";
       }
 
       window.updateLefts = function updateLefts(option,value) {
