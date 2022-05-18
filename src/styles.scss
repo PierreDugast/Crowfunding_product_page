@@ -211,7 +211,6 @@
       position: relative;
 
       .button {
-
         &.bookmark {
           width: 60px;
           background-color: $dark_gray;
@@ -219,7 +218,6 @@
           right: 0;
 
           .button_text {
-            
             visibility: hidden;
             position: absolute;
           }
@@ -234,9 +232,8 @@
           margin-left: 48px;
 
           &.bookmark {
-  
             height: auto;
-            
+
             margin-left: 0px;
             right: 168px;
 
@@ -260,10 +257,16 @@
               border-radius: 30px;
               font-weight: 700;
             }
+
+            .bookmarked {
+              color: $dark_cyan;
+            }
+
+            &:hover {
+              opacity: 0.8;
+            }
           }
-          
         }
-        
       }
     }
   }
@@ -506,6 +509,7 @@
 
   #modal_pledge {
     display: "none";
+    visibility: hidden;
     position: absolute;
     width: 330px;
     height: fit-content;
@@ -516,6 +520,18 @@
       rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
     border-radius: 10px;
     padding: 30px;
+
+    @media (min-width: $breakpoint-computer) {
+      display: "none";
+
+      width: 730px;
+ 
+      height: fit-content;
+      z-index: 1;
+      right: 355px;
+      top: 180px;
+      padding: 48px;
+    }
 
     #modal_header {
       display: flex;
@@ -534,6 +550,14 @@
 
         &:hover {
           cursor: pointer;
+          filter: brightness(0%) saturate(100%) invert(42%) sepia(93%)
+            saturate(2000%) hue-rotate(90deg) brightness(119%) contrast(300%);
+        }
+      }
+
+      @media (min-width: $breakpoint-computer) {
+        h2 {
+          font-size: 22px;
         }
       }
     }
@@ -544,6 +568,11 @@
       font-weight: 400;
       color: $dark_gray;
       margin-bottom: 10px;
+
+      @media (min-width: $breakpoint-computer) {
+        margin-bottom: 40px;
+        color: $dark_gray;
+      }
     }
 
     ul {
@@ -554,6 +583,12 @@
         border: 1px solid #cacaca;
         padding: 20px;
         border-radius: 8px;
+
+        @media (min-width: $breakpoint-computer) {
+          width: 100%;
+          padding: 30px;
+          position: relative;
+        }
 
         #pledge_type {
           display: flex;
@@ -579,7 +614,10 @@
 
             &:hover {
               cursor: pointer;
+              border: 1px solid $moderate_cyan;
             }
+
+
 
             &:before {
               content: "";
@@ -597,6 +635,15 @@
             }
           }
 
+          h3 {
+            @media (min-width: $breakpoint-computer) {
+              &:hover {
+                color :$moderate_cyan;
+                cursor: pointer;
+              }
+            }
+          }
+
           div {
             position: absolute;
             left: 36px;
@@ -605,6 +652,14 @@
             span {
               color: $moderate_cyan;
               font-weight: 500;
+            }
+
+            @media (min-width: $breakpoint-computer) {
+              display: flex;
+              line-height: 45px;
+              span {
+                margin-left: 25px;
+              }
             }
           }
         }
@@ -615,6 +670,12 @@
           font-weight: 400;
           line-height: 1.5;
           font-size: 14px;
+
+          @media (min-width: $breakpoint-computer) {
+            font-size: 15px;
+            margin-left: 38px;
+            margin-bottom: 0px;
+          }
         }
 
         #left {
@@ -625,6 +686,12 @@
           }
           font-weight: 300;
           color: $dark_gray;
+
+          @media (min-width: $breakpoint-computer) {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+          }
         }
 
         .pledge_amount {
@@ -638,12 +705,31 @@
           .pledge_amount {
             position: relative;
 
+            @media (min-width: $breakpoint-computer) {
+              .desktop_pledge {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            
+              }
+              
+
+            }
+
+
+
+
             hr {
               width: 276px;
               margin-top: 28px;
               margin-left: -20px;
               border: none;
               border-top: 1px solid #cacaca;
+
+              @media (min-width: $breakpoint-computer) {
+                width: 632px;
+                margin-left: -30px;
+              }
             }
 
             #pledge_label {
@@ -651,11 +737,22 @@
               margin-top: 34px;
               text-align: center;
               margin-bottom: 24px;
+
+              @media (min-width: $breakpoint-computer) {
+                margin-bottom: 0px;
+              }
             }
 
             #input {
               display: flex;
+              width: 100%;
               position: relative;
+
+              @media (min-width: $breakpoint-computer) {
+                width: 240px;
+                margin-top: 20px;
+              }
+
 
               input[type="number"] {
                 width: 100px;
@@ -665,6 +762,10 @@
                 appearance: none;
                 -webkit-appearance: none;
                 padding-left: 35px;
+
+                &:focus {
+                  border: 1px solid $moderate_cyan;
+                }
               }
 
               //hide arrows
@@ -687,6 +788,13 @@
                 width: 116px;
                 height: 50px;
                 right: 0;
+
+                &.free{
+
+        
+                  position: relative;
+                }
+              
               }
             }
           }
@@ -698,6 +806,13 @@
           #pledge_type {
             input[type="checkbox"] {
               pointer-events: none;
+            }
+
+            h3 {
+              &:hover {
+                color: $black;
+                cursor: default;
+              }
             }
           }
         }
@@ -745,6 +860,29 @@
       width: 100px;
       height: 50px;
     }
+
+    @media (min-width: $breakpoint-computer) {
+      width: 540px;
+      height: 450px;
+      padding: 48px;
+      top: 465px;
+      left: 450px;
+      z-index: 1;
+
+      img {
+        width: 90px;
+        height: auto;
+        margin-bottom: 50px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
   }
 
   //classes
@@ -756,7 +894,6 @@
     background-color: $moderate_cyan;
     color: white;
     border-radius: 30px;
-
 
     &.bookmark {
       width: 60px;

@@ -200,10 +200,12 @@
             </p>
             <div class="pledge_amount" id="free_pledge_amount">
               <hr />
+              <div class="desktop_pledge">
               <div id="input">
-                <button class="button" onclick="pledge('free','0')">Continue</button>
+                <button class="button free" onclick="pledge('free','0')">Continue</button>
               </div>
-              <p><br></p>
+              </div>
+              <!-- <p><br></p> -->
             </div>
           </li>
 
@@ -225,12 +227,14 @@
             <div id="left"><span class="bamboo_left">101</span>left</div>
             <div class="pledge_amount" id="bamboo_pledge_amount">
               <hr />
+              <div class="desktop_pledge">
               <p id="pledge_label">Enter your pledge</p>
               <div id="input">
                 <input type="number" name="" id="input_bamboo_pledge" value="25" />
                 <span class="unit">$</span>
                 <button class="button" onclick="pledge('bamboo',document.getElementById('input_bamboo_pledge').value)">Continue</button>
               </div>
+            </div>
             </div>
           </li>
 
@@ -253,11 +257,13 @@
             </div>
             <div class="pledge_amount" id="black_pledge_amount">
               <hr />
+              <div class="desktop_pledge">
               <p id="pledge_label">Enter your pledge</p>
               <div id="input">
                 <input type="number" name="" id="input_black_pledge" value="75" />
                 <span class="unit">$</span>
                 <button class="button" onclick="pledge('black',document.getElementById('input_black_pledge').value)">Continue</button>
+              </div>
               </div>
             </div>
           </li>
@@ -280,12 +286,14 @@
          
           <div class="pledge_amount" id="mahogany_pledge_amount">
             <hr />
+            <div class="desktop_pledge">
             <p id="pledge_label">Enter your pledge</p>
             <div id="input">
               <input type="number" name="" id="" value="200" />
               <span class="unit">$</span>
               <button class="button">Continue</button>
             </div>
+          </div>
           </div>
           </li>
         </ul>
@@ -311,23 +319,27 @@
       var button_bookmarked  = document.getElementById("button_bookmarked");
       var bookmarked = false;
       window.toggle_bookmark = function toggle_bookmark(){
-        console.log("hello");
+    
         if (bookmarked === false){
           button_bookmarked.style.visibility = " hidden";
           button_bookmark.style.visibility = "visible";
+          document.getElementById("bookmark_text").classList.remove("bookmarked");
           document.getElementById("bookmark_text").innerHTML ="Bookmark";
+          
           bookmarked = true;
         }
         else if (bookmarked === true){
           button_bookmark.style.visibility = "hidden";
           button_bookmarked.style.visibility = "visible";
           document.getElementById("bookmark_text").innerHTML ="Bookmarked";
+          document.getElementById("bookmark_text").classList.add("bookmarked");
+         
           bookmarked = false;
         }
       }
 
       //default
-      toggle_bookmark("bookmark");
+      toggle_bookmark();
 
 
       //GLOBAL VAR
@@ -411,6 +423,7 @@
 
         // ouvre le modal
         document.getElementById("modal_pledge").style.display = "block";
+        document.getElementById("modal_pledge").style.visibility = "visible";
 
         if (value != undefined){
           selectOption(value);
@@ -506,12 +519,13 @@
       };
 
       window.addEventListener("resize", reportWindowSize);
-
+      // window.innerWidth;
       function reportWindowSize() {
-        if (window.innerWidth >= 1440) {
+
+        if (document.documentElement.clientWidth >= 1440) {
           //if the window is resized to desktop mode, reset the menu for desktop view
 
-          menu.style.height = "80px";
+          // menu.style.height = "80px";
           menu.style.visibility = "visible";
           hamburger_button.style.visibility = "hidden";
           close_button.style.visibility = "hidden";
