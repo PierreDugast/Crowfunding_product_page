@@ -15,7 +15,7 @@
     background-size: 100%;
     position: relative;
 
-    #mobile_topbar {
+    #topbar {
       display: flex;
       width: 330px;
       margin: 0 auto;
@@ -49,6 +49,17 @@
 
         &:hover {
           cursor: pointer;
+        }
+      }
+
+      @media (min-width: $breakpoint-computer) {
+        width: 1120px;
+        padding-top: 48px;
+
+        #hamburger,
+        #close-menu {
+          visibility: hidden;
+          position: absolute;
         }
       }
     }
@@ -91,6 +102,48 @@
           }
         }
       }
+
+      @media (min-width: $breakpoint-computer) {
+        visibility: visible;
+        width: fit-content;
+        height: 20px;
+        margin: 0;
+
+        background-color: transparent;
+        box-shadow: none;
+        border-radius: 0px;
+        position: absolute;
+        right: 126px;
+        top: 48px;
+
+        ul {
+          display: flex;
+          margin: 0;
+          height: fit-content;
+          padding: 0;
+
+          li {
+            color: white;
+            border: none;
+            margin: 0;
+            height: fit-content;
+            line-height: 18px;
+            padding-left: 30px;
+          }
+        }
+      }
+    }
+
+    @media (min-width: $breakpoint-computer) {
+      background-image: url(../assets/image-hero-desktop.jpg);
+      height: 400px;
+      background-size: 100%;
+      position: relative;
+
+      #logo {
+        position: absolute;
+        left: 0;
+      }
     }
   }
 
@@ -105,20 +158,35 @@
     border: 1px solid #f2f2f2;
     border-radius: 10px;
 
+    @media (min-width: $breakpoint-computer) {
+      width: 732px;
+      height: 270px;
+      margin-top: -96px;
+    }
+
     #mastercraft_logo {
       width: 56px;
       height: auto;
       position: absolute;
       left: 137px;
       top: -28px;
+
+      @media (min-width: $breakpoint-computer) {
+        left: 338px;
+      }
     }
 
     h1 {
       padding-top: 60px;
-      padding-bottom: 30px;
+      padding-bottom: 25px;
       font-size: 22px;
       text-align: center;
       font-weight: 700;
+
+      @media (min-width: $breakpoint-computer) {
+        padding-bottom: 20px;
+        font-size: 30px;
+      }
     }
 
     p {
@@ -148,6 +216,48 @@
           background-color: $dark_gray;
           position: absolute;
           right: 0;
+
+          p {
+            visibility: hidden;
+            position: absolute;
+          }
+        }
+      }
+
+      @media (min-width: $breakpoint-computer) {
+        width: 100%;
+        display: flex;
+
+        .button {
+          margin-left: 48px;
+
+          &.bookmark {
+            width: 60px;
+            height: auto;
+            background-color: $dark_gray;
+            margin-left: 0px;
+            right: 168px;
+
+            img {
+              z-index: 1;
+              position: relative;
+            }
+
+            p {
+              width: 180px;
+              height: 60px;
+              visibility: visible;
+              color: $dark_gray;
+              position: absolute;
+              top: 0px;
+              line-height: 60px;
+              margin-left: 0px;
+              padding-left: 40px;
+              background-color: #f5f5f5;
+              border-radius: 30px;
+              font-weight: 700;
+            }
+          }
         }
       }
     }
@@ -187,8 +297,11 @@
 
     #progress_container {
       width: 270px;
-
       margin: 0 auto;
+
+      @media (min-width: $breakpoint-computer) {
+        width: 640px;
+      }
 
       //voir rendu firefox
 
@@ -199,6 +312,10 @@
         height: 14px;
 
         margin-bottom: 30px;
+
+        @media (min-width: $breakpoint-computer) {
+          width: 640px;
+        }
       }
 
       ::-webkit-progress-bar {
@@ -211,6 +328,52 @@
         border-radius: 7px;
       }
     }
+
+    @media (min-width: $breakpoint-computer) {
+      width: 732px;
+      height: 210px;
+      padding: 48px;
+      position: relative;
+  
+
+      .desktop_horizontal {
+        display: flex;
+        // align-items: ;
+        text-align: left;
+        height: 70px;
+        // background-color: pink;
+        margin-bottom: 35px;
+    
+
+        .number_emphase {
+          width: 140px;
+          font-size: 35px;
+          font-weight: 700;
+          text-align: left;
+          margin: 0;
+          margin-bottom: 15px;
+          
+
+          p {
+            font-size: 15px;
+            text-align: left;
+            color: $dark_gray;
+            font-weight: 400;
+
+           
+          }
+        }
+
+       
+
+        hr {
+          border-left: 1px solid #d4d4d4;
+          width: 1px;
+
+          height: 60px;
+        }
+      }
+    }
   }
 
   #about {
@@ -221,6 +384,11 @@
     background-color: white;
     border: 1px solid #f2f2f2;
     border-radius: 10px;
+
+    @media (min-width: $breakpoint-computer) {
+      width: 732px;
+      padding: 48px;
+    }
 
     #description {
       width: 274px;
@@ -238,6 +406,15 @@
         color: $dark_gray;
         line-height: 1.5;
         margin-bottom: 36px;
+      }
+
+      @media (min-width: $breakpoint-computer) {
+        width: 100%;
+        margin-top: 0px;
+
+        p{
+          font-size: 16px;
+        }
       }
     }
 
@@ -287,7 +464,55 @@
         &.disabled {
           opacity: 0.6;
         }
+
+        @media (min-width: $breakpoint-computer) {
+            width: 100%;
+            position: relative;
+            padding: 42px;
+
+
+            #cost {
+              position: absolute;
+              right: 42px;
+              top:42px;
+            }
+
+ 
+
+            .desktop_display{
+              display: flex;
+              justify-content: space-between;
+              
+              #quantity {
+        
+                height: fit-content;
+                margin-bottom: 0px;
+                display: flex;
+                line-height: 35px;
+                color: $dark_gray;
+                font-weight: 400;
+      
+                span {
+                  font-size: 35px;
+                  color: black;
+                  margin-right: 5px;
+                  font-weight: 700;
+                }
+  
+              }
+
+
+
+            }
+
+           
+
+
+
+        }
       }
+
+      
     }
   }
 
@@ -423,7 +648,6 @@
           border: 2px solid $moderate_cyan;
 
           .pledge_amount {
-     
             position: relative;
 
             hr {

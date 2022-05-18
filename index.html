@@ -34,7 +34,7 @@
   <body>
     <div id="global_container">
       <header>
-        <div id="mobile_topbar">
+        <div id="topbar">
           <img id="logo" src="./assets/logo.svg" alt="logo" />
           <img
             id="hamburger"
@@ -66,7 +66,7 @@
           alt="logo-mastercraft"
         />
         <h1>
-          Mastercraft Bamboo <br />
+          Mastercraft Bamboo
           Monitor Riser
         </h1>
         <p>
@@ -74,28 +74,34 @@
         </p>
         <div id="buttons">
           <button class="button" onclick="showPledgeModal()">Back this project</button>
+
           <button id="button_bookmark" class="button bookmark" onclick="toggle_bookmark('check')">
             <img src="./assets/icon-bookmark.svg" alt="icon-bookmark"  />
           </button>
 
           <button id="button_check" class="button bookmark" onclick="toggle_bookmark('bookmark')">
             <img src="./assets/icon-check.svg" alt="icon-check"  />
+            <p>Bookmark</p>
           </button>
 
         </div>
       </section>
 
       <section id="numbers">
-        <div class="number_emphase" id="pledge_total_display">$89,914</div>
-        <p>of $100,000 backed</p>
+        <div class="desktop_horizontal">
+          <div class="number_emphase" id="pledge_total_display">$89,914<p>of $100,000 backed</p></div>
+          
 
-        <hr />
-        <div class="number_emphase" id="backers_display">5,007</div>
-        <p>total backers</p>
-        <hr />
-        <div class="number_emphase">56</div>
-        <p>days left</p>
+          <hr />
 
+          <div class="number_emphase" id="backers_display">5,007<p>total backers</p></div>
+          
+
+          <hr />
+
+          <div class="number_emphase">56<p>days left</p></div>
+          
+        </div>
         <div id="progress_container">
           <progress id="progress" max="100000" value="89914"></progress>
         </div>
@@ -128,8 +134,11 @@
                 helped us launch our promotional campaign, and you'll be added
                 to a special Backer member list.
               </p>
-              <div id="quantity"><span class="bamboo_left">101</span>left</div>
-              <button class="button" onclick="showPledgeModal('bamboo')" >Select reward</button>
+              <div class="desktop_display">
+                <div id="quantity"><span class="bamboo_left">101</span>left</div>
+                <button class="button" onclick="showPledgeModal('bamboo')" >Select reward</button>
+              </div>
+              
             </li>
 
             <li>
@@ -140,8 +149,10 @@
                 thank you. You'll be added to our Backer member list. Shipping
                 is included.
               </p>
+              <div class="desktop_display">
               <div id="quantity"><span class="black_left">64</span>left</div>
               <button class="button" onclick="showPledgeModal('black')">Select reward</button>
+            </div>
             </li>
 
             <li class="disabled">
@@ -152,8 +163,10 @@
                 and a personal thank you. You'll be added to our Backer member
                 list. Shipping is included.
               </p>
+              <div class="desktop_display">
               <div id="quantity"><span>0</span>left</div>
               <button class="button disabled" onclick="showPledgeModal('mahogany')"">Out of stock</button>
+            </div>           
             </li>
           </ul>
         </div>
@@ -383,9 +396,6 @@
       }
 
 
-
-      // pledge_modal
-
       
       // MODAL GLOBAL
 
@@ -408,7 +418,7 @@
 
     
 
-      var bamboo_pledge_amount = document.getElementById("bamboo_pledge_amount");
+     
       
       function check(option){
         // uncheck toutes les checkbox
