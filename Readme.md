@@ -5,7 +5,8 @@
 
   17/05/2022 : 19h10 - 20h50 : fix js
   17/05/2022 : 21h45 - 22h21 : debut version desktop\
-  18/05/2022 : 11h10 -  xxx : version desktop
+  18/05/2022 : 11h10 -  12h15 : version desktop statique
+  18/05/2022 : 14h25 - 
 
     mobile : corriger h1 premier block
 

@@ -75,15 +75,17 @@
         <div id="buttons">
           <button class="button" onclick="showPledgeModal()">Back this project</button>
 
-          <button id="button_bookmark" class="button bookmark" onclick="toggle_bookmark('check')">
-            <img src="./assets/icon-bookmark.svg" alt="icon-bookmark"  />
+          <button id="button_bookmark" class="button bookmark" >
+            <img src="./assets/icon-bookmark.svg" alt="icon-bookmark"  onclick="toggle_bookmark(); return false" />
+            <span id="bookmark_text" onclick="toggle_bookmark(); return false" class="button_text">Bookmark</span>
+            
           </button>
+          
 
-          <button id="button_check" class="button bookmark" onclick="toggle_bookmark('bookmark')">
-            <img src="./assets/icon-check.svg" alt="icon-check"  />
-            <p>Bookmark</p>
+          <button id="button_bookmarked" class="button bookmark">
+            <img src="./assets/icon-bookmarked.svg" alt="icon-bookmarked"  onclick="toggle_bookmark(); return false" />
           </button>
-
+         
         </div>
       </section>
 
@@ -306,15 +308,21 @@
     <script>
       //bookmark
       var button_bookmark = document.getElementById("button_bookmark");
-      var button_check  = document.getElementById("button_check");
-      window.toggle_bookmark = function toggle_bookmark(value){
-        if (value === "bookmark"){
-          button_check.style.visibility = " hidden";
+      var button_bookmarked  = document.getElementById("button_bookmarked");
+      var bookmarked = false;
+      window.toggle_bookmark = function toggle_bookmark(){
+        console.log("hello");
+        if (bookmarked === false){
+          button_bookmarked.style.visibility = " hidden";
           button_bookmark.style.visibility = "visible";
+          document.getElementById("bookmark_text").innerHTML ="Bookmark";
+          bookmarked = true;
         }
-        else if (value === "check"){
+        else if (bookmarked === true){
           button_bookmark.style.visibility = "hidden";
-          button_check.style.visibility = "visible";
+          button_bookmarked.style.visibility = "visible";
+          document.getElementById("bookmark_text").innerHTML ="Bookmarked";
+          bookmarked = false;
         }
       }
 
