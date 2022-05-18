@@ -319,20 +319,31 @@
         display: inline-block;
         width: 270px;
         height: 14px;
-
+        border: none; /* Needed for Firefox */
         margin-bottom: 30px;
-
+        //for ff
+        border-radius: 7px;
         @media (min-width: $breakpoint-computer) {
           width: 640px;
         }
       }
 
-      ::-webkit-progress-bar {
+
+
+      ::-webkit-progress-bar
+      {
         background-color: #f2f2f2;
         border-radius: 7px;
       }
 
-      ::-webkit-progress-value {
+      ::-webkit-progress-value
+      {
+        background-color: $moderate_cyan;
+        border-radius: 7px;
+      }
+
+      ::-moz-progress-bar
+      {
         background-color: $moderate_cyan;
         border-radius: 7px;
       }
